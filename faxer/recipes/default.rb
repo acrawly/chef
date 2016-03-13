@@ -40,3 +40,10 @@ file '/etc/httpd/conf.d/faxer.conf' do
   owner 'root'
   group 'root'
 end
+
+file '/faxer/index.php' do
+  content '<?php phpinfo() ?>'
+  mode '0755'
+  owner 'apache'
+  group 'apache'
+end
