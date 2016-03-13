@@ -6,7 +6,8 @@ execute 'remove_httpd_tools_24' do
 end
 
 include_recipe "apache2"
-include_recipe "php"
+include_recipe "php::source"
+
 #include_recipe "apache2::mod_php5" 
 
 service 'apache2' do
