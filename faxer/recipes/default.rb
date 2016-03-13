@@ -16,22 +16,17 @@ end
 # Set up the local application config.
 # This part is most likely to be different for different applications.
 #
-directory '/faxer' do
-  owner 'apache'
-  group 'apache'
-  mode '0755'
-  action :create
-end
 
 directory '/faxer/apache_logs' do
   owner 'apache'
   group 'apache'
   mode '0755'
   action :create
+  recursive true
 end
 
-file '/faxer/index.php' do
-  content '<?php phpinfo() ?>'
+file '/faxer/index.html' do
+  content '<h1>Hello from Faxer</h1>'
   mode '0755'
   owner 'apache'
   group 'apache'
