@@ -5,8 +5,6 @@ execute 'remove_httpd_tools_24' do
   command 'yum remove httpd-tools-2.2.25-1.0.amzn1.x86_64'
 end
 
-default['faxer']['hostname'] = 'faxer.co'
-
 include_recipe "apache2"
 #include_recipe "apache2::mod_php5" 
 
