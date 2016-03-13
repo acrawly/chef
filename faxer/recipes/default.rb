@@ -20,7 +20,7 @@ directory '/var/www/html/faxer/apache_logs' do
   recursive true
 end
 
-file '/var/www/html/faxer/index.html' do
+file '/var/www/html/faxer/index.php' do
   content '<h1>Hello from Faxer</h1><br /><br /><?php phpinfo(); ?>'
   mode '0755'
   owner 'apache'
