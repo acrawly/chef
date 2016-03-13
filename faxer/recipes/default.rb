@@ -7,8 +7,8 @@ end
 
 include_recipe "apache2"
 include_recipe "php::source"
-
-#include_recipe "apache2::mod_php5" 
+include_recipe ""
+include_recipe "apache2::mod_php5" 
 
 service 'apache2' do
   action [:enable, :start]
