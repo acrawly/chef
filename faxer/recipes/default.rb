@@ -42,6 +42,10 @@ web_app "faxer.co" do
   server_name 'faxer.co'
 end
 
-apache_config 'faxer.co' do
-  enable true
+web_app "default" do
+  template 'default.conf.erb'
 end
+
+#apache_site 'faxer.co' do
+# enable true
+#end
