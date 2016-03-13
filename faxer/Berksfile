@@ -1,3 +1,7 @@
 source 'https://supermarket.chef.io'
 
 metadata
+
+#need to add the others here...
+
+cookbook 'yum-epel', '~> 0.6.6'
