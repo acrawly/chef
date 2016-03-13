@@ -5,3 +5,5 @@ license 'all_rights'
 description 'Installs/Configures faxer'
 long_description 'Installs/Configures faxer'
 version '0.1.0'
+depends "apache2"
+depends "mysql"
