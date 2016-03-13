@@ -1,7 +1,7 @@
 <VirtualHost *:80>
   ServerAdmin support@crawford.works
-  ServerName <%= params['server_name'] %>
-  ServerAlias www.<%= params['server_name'] %>
+  ServerName <%= @params['server_name'] %>
+  ServerAlias www.<%= @params['server_name'] %>
   DocumentRoot /faxer
 
   LogLevel Warn
