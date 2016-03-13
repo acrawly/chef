@@ -8,6 +8,10 @@ end
 include_recipe "apache2"
 #include_recipe "apache2::mod_php5" 
 
+service 'apache2' do
+  action [:enable, :start]
+end
+
 #
 # Set up the local application config.
 # This part is most likely to be different for different applications.
