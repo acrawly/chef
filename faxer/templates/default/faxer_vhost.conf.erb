@@ -2,11 +2,11 @@
   ServerAdmin support@crawford.works
   ServerName <%= node['faxer']['hostname'] %>
   ServerAlias www.<%= node['faxer']['hostname'] %>
-  DocumentRoot /faxer
+  DocumentRoot /var/www/html/faxer
 
   LogLevel Warn
-  ErrorLog /faxer/apache_logs/error.log
-  CustomLog Combined /faxer/apache_logs/custom.log
+  ErrorLog /var/www/html/faxer/apache_logs/error.log
+  CustomLog Combined /var/www/html/faxer/apache_logs/custom.log
 
 
   <Directory /faxer>

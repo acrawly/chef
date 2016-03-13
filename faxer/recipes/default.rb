@@ -16,8 +16,24 @@ end
 # Set up the local application config.
 # This part is most likely to be different for different applications.
 #
+#default things
+directory '/var/www/html/default' do
+  owner 'apache'
+  group 'apache'
+  mode '0755'
+  action :create
+end
 
-directory '/faxer/apache_logs' do
+file '/var/www/html/default/index.html' do
+  content '<h1>Hello from Default</h1>'
+  mode '0755'
+  owner 'apache'
+  group 'apache'
+end
+
+#end of default things
+
+directory '/var/www/html/faxer/apache_logs' do
   owner 'apache'
   group 'apache'
   mode '0755'
@@ -25,7 +41,7 @@ directory '/faxer/apache_logs' do
   recursive true
 end
 
-file '/faxer/index.html' do
+file '/var/www/html/faxer/index.html' do
   content '<h1>Hello from Faxer</h1>'
   mode '0755'
   owner 'apache'
