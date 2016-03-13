@@ -1,3 +1,10 @@
+
+#ran into this error: Error: httpd24-tools conflicts with httpd-tools-2.2.31-1.6.amzn1.x86_64
+#This is fix for that
+execute 'remove_httpd_tools_24' do
+  command 'yum remove httpd-tools-2.2.25-1.0.amzn1.x86_64'
+end
+
 include_recipe "apache2"
 include_recipe "apache2::mod_php5" 
 
