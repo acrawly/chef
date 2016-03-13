@@ -4,13 +4,4 @@
   ServerAlias *
   DocumentRoot /faxer
 
-  LogLevel Warn
-  ErrorLog /faxer/apache_logs/error.log
-  CustomLog Combined /faxer/apache_logs/custom.log
-
-
-  <Directory /faxer>
-    Options +FollowSymLinks +Indexes
-    AllowOverride none 
-  </Directory>
 </VirtualHost>
