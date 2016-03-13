@@ -1,7 +1,6 @@
 <VirtualHost *:80>
   ServerAdmin support@crawford.works
   ServerName <%= node['faxer']['hostname'] %>
-  ServerAlias www.<%= node['faxer']['hostname'] %>
   ServerAlias *
   DocumentRoot /var/www/html/faxer
 

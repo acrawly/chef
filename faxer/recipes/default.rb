@@ -6,7 +6,7 @@ execute 'remove_httpd_tools_24' do
 end
 
 include_recipe "apache2"
-#include_recipe "apache2::mod_php5" 
+include_recipe "apache2::mod_php5" 
 
 service 'apache2' do
   action [:enable, :start]
@@ -16,22 +16,6 @@ end
 # Set up the local application config.
 # This part is most likely to be different for different applications.
 #
-#default things
-directory '/var/www/html/default' do
-  owner 'apache'
-  group 'apache'
-  mode '0755'
-  action :create
-end
-
-file '/var/www/html/default/index.html' do
-  content '<h1>Hello from Default</h1>'
-  mode '0755'
-  owner 'apache'
-  group 'apache'
-end
-
-#end of default things
 
 directory '/var/www/html/faxer/apache_logs' do
   owner 'apache'
@@ -42,7 +26,7 @@ directory '/var/www/html/faxer/apache_logs' do
 end
 
 file '/var/www/html/faxer/index.html' do
-  content '<h1>Hello from Faxer</h1>'
+  content '<h1>Hello from Faxer</h1><br /><br /><?php phpinfo(); ?>'
   mode '0755'
   owner 'apache'
   group 'apache'
@@ -51,10 +35,6 @@ end
 web_app "faxer.co" do
   template 'faxer_vhost.conf.erb'
   server_name 'faxer.co'
-end
-
-web_app "default" do
-  template 'default.conf.erb'
 end
 
 #apache_site 'faxer.co' do
