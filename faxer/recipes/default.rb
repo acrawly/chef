@@ -37,7 +37,11 @@ file '/faxer/index.php' do
   group 'apache'
 end
 
-apache_config 'faxer_vhost' do
+web_app "faxer.co" do
+  template 'faxer_vhost.conf.erb'
+  server_name 'faxer.co'
+end
+
+apache_config 'faxer.co' do
   enable true
-  source 'faxer_vhost.conf.erb'
 end
